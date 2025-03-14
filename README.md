@@ -1,54 +1,41 @@
-# React + TypeScript + Vite
+# vite-shadcn-stripe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A batteries-included project template for React applications with modern tooling and payment integration.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project is a template for creating React applications with:
 
-## Expanding the ESLint configuration
+- Vite for lightning-fast development and optimized builds
+- React 19+ with TypeScript for type safety
+- TailwindCSS for utility-first styling
+- shadcn/ui for beautiful, accessible UI components 
+- Stripe integration for payment processing
+- Supabase as backend for Stripe integration
+- Fully configured ESLint and TypeScript
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Roadmap
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+This repository will be transformed into an npm template that allows users to create new projects with:
+
+```bash
+npm create vite-shadcn-stripe my-project
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The template will provide a complete starting point with all dependencies configured and ready for development, including authentication, payment flows, and responsive UI components.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Stay tuned for updates as we implement and test all features before publishing to npm.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+
+## Instructions
+
 ```
+bun install
+bunx --bun shadcn@latest init
+bun run dev
+```
+
+
+### Stripe
+
+https://docs.stripe.com/payment-links/create
