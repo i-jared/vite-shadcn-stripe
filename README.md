@@ -1,54 +1,118 @@
-# React + TypeScript + Vite
+# create-vite-shadcn-stripe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A template generator for creating React applications with modern tooling and payment integration.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This npm package provides a template for creating React applications with:
 
-## Expanding the ESLint configuration
+- Vite for lightning-fast development and optimized builds
+- React 19+ with TypeScript for type safety
+- TailwindCSS for utility-first styling
+- shadcn/ui for beautiful, accessible UI components 
+- Stripe integration for payment processing
+- Supabase as backend for Stripe integration
+- Fully configured ESLint and TypeScript
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Usage
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+You can create a new project with:
+
+```bash
+# Using npm
+npm create vite-shadcn-stripe my-project
+
+# Using yarn
+yarn create vite-shadcn-stripe my-project
+
+# Using pnpm
+pnpm create vite-shadcn-stripe my-project
+
+# Using bun
+bun create vite-shadcn-stripe my-project
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The template will provide a complete starting point with all dependencies configured and ready for development, including authentication, payment flows, and responsive UI components.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Features
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- **Modern Stack:** Built with React 19, TypeScript, and Vite for an optimal development experience
+- **Stripe Integration:** Pre-configured payment processing with Stripe Checkout
+- **Supabase Backend:** Ready-to-deploy Supabase Edge Functions for handling Stripe webhooks
+- **shadcn/ui Components:** Beautiful, accessible UI components that you own
+- **Hidden Button Checkout:** Interactive checkout flow with a hidden button that appears on mousemove
+- **Success Page:** Confirmation page after successful checkout
+- **TypeScript:** Type safety throughout the codebase with strict mode enabled
+
+## Instructions for Users
+
+After creating your project:
+
+```bash
+# Change into project directory
+cd my-project
+
+# Install dependencies
+npm install
+# or
+bun install
+
+# Initialize shadcn/ui
+npx shadcn-ui@latest init
+# or
+bunx --bun shadcn@latest init
+
+# Start the development server
+npm run dev
+# or
+bun run dev
 ```
+
+## For Contributors
+
+If you want to contribute to this template generator:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/vite-shadcn-stripe.git
+   cd vite-shadcn-stripe
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   bun install
+   ```
+
+3. Make your changes to the template files in the `template/` directory
+
+4. Test your changes locally:
+   ```bash
+   # Link the package locally
+   npm link
+   
+   # Create a test project using your local version
+   npm create vite-shadcn-stripe test-project
+   ```
+
+5. Submit a pull request with your changes
+
+## Publishing
+
+To publish a new version to npm:
+
+```bash
+# Login to npm
+npm login
+
+# Bump version (patch, minor, or major)
+npm version patch
+
+# Publish
+npm publish
+```
+
+## License
+
+MIT
